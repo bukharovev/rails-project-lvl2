@@ -10,3 +10,6 @@ lint:
 
 autofix:
 	rubocop -A
+
+deploy:
+	git push heroku
