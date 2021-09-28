@@ -1,0 +1,7 @@
+
+- @posts.each do |post|
+    .card
+      .card-body
+        h5.card-title
+          = link_to post.title, post_url(post)
+        p.card-text = post.body
