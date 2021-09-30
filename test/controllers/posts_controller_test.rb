@@ -1,4 +1,6 @@
-require "test_helper"
+# frozen_string_literal: true
+
+require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
@@ -10,17 +12,17 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     sign_in @user
   end
 
-  test "should get index" do
+  test 'should get index' do
     get posts_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_post_url
     assert_response :success
   end
 
-  test "should create post" do
+  test 'should create post' do
     post = {
       title: 'string',
       body: 'text',
@@ -34,17 +36,17 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_url(Post.last)
   end
 
-  test "should show post" do
+  test 'should show post' do
     get post_url(@post)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_post_url(@post)
     assert_response :success
   end
 
-  test "should update post" do
+  test 'should update post' do
     post = {
       title: 'string',
       body: 'new_text',
@@ -55,7 +57,7 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to post_url(@post)
   end
 
-  test "should destroy post" do
+  test 'should destroy post' do
     assert_difference('Post.count', -1) do
       delete post_url(@post)
     end
